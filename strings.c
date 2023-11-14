@@ -11,7 +11,7 @@ char *print_str(va_list args)
 {
 	char *s;
 	char *p;
-	int index, i;
+	int index = 0, i;
 
 	s = va_arg(args, char *);
 	if (s == NULL)
@@ -22,11 +22,11 @@ char *print_str(va_list args)
 		index++;
 	}
 
-	p = malloc(sizeof(char) * index);
+	p = malloc(sizeof(char) * (index + 1));
 	if (p == NULL)
 		return (NULL);
 
 	p = s;
 
-	return (p);
+	return (s);
 }
