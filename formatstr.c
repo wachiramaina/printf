@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 
 	for (i = 0; format[i] != '\0'; i++)
 	{
-		if (format != '%')
+		if (format[i] != '%')
 		{
 			len = check_overflow(buff, len);
 			buff[len++] = format[i];
@@ -52,7 +52,7 @@ int _printf(const char *format, ...)
 				fun = getf(format[i]);
 				if (fun == NULL)
 				{
-					len = check_overflow(buffer, len);
+					len = check_overflow(buff, len);
 					buff[len++] = '%';
 					tot_len++;
 					buff[len++] = format[i];
@@ -65,10 +65,10 @@ int _printf(const char *format, ...)
 					if (str == NULL)
 					{
 						va_end(args);
-						free(buffer);
+						free(buff);
 						return (-1);
 					}
-					if (formart[i] == 'c' && str[0] == '\0')
+					if (format[i] == 'c' && str[0] == '\0')
 					{
 						len = check_overflow(buff, len);
 						buff[len++] = '\0';
@@ -79,7 +79,7 @@ int _printf(const char *format, ...)
 					while (str[j] != '\0')
 					{
 						len = check_overflow(buff, len);
-						buffer[len++] = str[j];
+						buff[len++] = str[j];
 						tot_len++;
 						j++;
 					}
@@ -88,3 +88,6 @@ int _printf(const char *format, ...)
 			}
 		}
 	}
+	print_buff(buff, len, args);
+	return (tot_len);
+}

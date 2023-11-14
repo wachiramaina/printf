@@ -11,7 +11,7 @@ char *print_int(va_list args)
 {
 	int len, div, num, tem;
 
-	num = va_arg(args);
+	num = va_arg(args, int);
 	tem = num;
 	len = 0;
 	div = 1;

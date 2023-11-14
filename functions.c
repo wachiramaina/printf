@@ -51,10 +51,10 @@ char* (*getf(char i))(va_list)
 		{'s', print_str},
 		{'d', print_int},
 		{'i', print_int},
-		{'b', itob},
-		{'R', rot13},
-		{'r', rev_string},
-		{'o', itoO},
+		/*{'b', itob},*/
+		/*{'R', rot13},*/
+		/*{'r', rev_string},*/
+		/* {'o', itoO}, */
 		{'\0', NULL}
 	};
 
@@ -80,4 +80,4 @@ void print_buff(char *buff, int len, va_list args)
 	write(1, buff, len);
 	free(buff);
 	va_end(args);
-}}
+}

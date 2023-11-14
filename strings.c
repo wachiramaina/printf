@@ -11,7 +11,7 @@ char *print_str(va_list args)
 {
 	char *s;
 	char *p;
-	int len, index, i;
+	int index, i;
 
 	s = va_arg(args, char *);
 	if (s == NULL)
