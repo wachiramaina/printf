@@ -25,5 +25,7 @@ char *print_str(va_list args);
 char *print_int(va_list args);
 char *_itos(int mul, int length, int n);
 char *make_buffer(void);
+char *rot13(va_list args);
+char *int_binary(va_list args);
 
 #endif /* _MAIN_H_*/
