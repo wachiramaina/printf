@@ -5,8 +5,13 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
-
-typedef struct specifier{
+/**
+ * struct specifier - a struct
+ * @symb: the specifier character
+ * @f: ponter to convert specified data to string
+ */
+typedef struct specifier
+{
 	char symb;
 	char* (*f)(va_list);
 } specifier;

@@ -26,7 +26,11 @@ char *print_str(va_list args)
 	if (p == NULL)
 		return (NULL);
 
-	p = s;
+	index = 0;
+	for (i = 0; s[i]; i++)
+	{
+		p[index++] = s[i];
+	}
 
-	return (s);
+	return (p);
 }
