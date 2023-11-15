@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 			if (format[i] == '%')
 			{
 				len = check_overflow(buff, len);
-				buff[len] = format[i];
+				buff[len] = format[i];char *int_binary(va_list args)
 				tot_len++;
 			}
 			else
