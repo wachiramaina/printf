@@ -53,7 +53,7 @@ char* (*getf(char i))(va_list)
 		{'i', print_int},
 		{'b', int_binary},
 		{'R', rot13},
-		/*{'r', rev_string},*/
+		{'r', str_rev},
 		/* {'o', itoO}, */
 		{'\0', NULL}
 	};
